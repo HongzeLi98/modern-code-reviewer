@@ -34,14 +34,19 @@ int main(){
             cout << "Player 2: "; 
         cout << "Which cell to mark? i:[1..3], j:[1..3]: ";  
         cin >> i >> j; 
-        if (turn == false) 
-            game[i][j] = 'X'; 
-        else  
-            game[i][j] = 'O'; 
-        if (isWin(game)){ 
-            cout << "Win!" << endl; 
-            break; // need to terminate the problem 
-        } 
+        if ((i==0||i==1||i==2) && (j==0||j==1||j==3))
+            if (turn == false) 
+                game[i][j] = 'X'; 
+            else  
+                game[i][j] = 'O'; 
+            if (isWin(game)){ 
+                cout << "Win!" << endl; 
+                break; // need to terminate the problem 
+        else
+            cout << "Undefined Input!" << endl
+            break; // need valid input
+        }
+         
     } 
 
     if (i==3) // all celles with i=0 to 2 have been inputted above but no winner yet 
